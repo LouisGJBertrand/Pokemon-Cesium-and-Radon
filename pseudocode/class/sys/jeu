@@ -1,9 +1,10 @@
 classe jeu:
 
-    public constructeur( chaine nom, chaine version, tableau credits, int MAXATK = 4, int MAXTPE = 2)
-        public $jeu -> nom = nom
-        public $jeu -> version = version
-        public $jeu -> credits[] = credits
+    public constructeur( chaine nom, chaine version, tableau credits, int MAXATK = 4, int MAXTPE = 2, int MAXTPEATK = 2)
+        public $jeu -> nom = nom                                            ; Défini le nom du jeu
+        public $jeu -> version = version                                    ; défini la version du jeu
+        public $jeu -> credits[] = credits                                  ; défini les crédits du jeux
 
-        constante MAXATK = MAXATK
-        constante MAXTPE = MAXTPE
+        constante MAXATK = MAXATK                                           ; défini le nombre max d'attaque par pokémon
+        constante MAXTPE = MAXTPE                                           ; défini le nombre max de types par pokémon
+        constante MAXTPEATK = MAXTPEATK                                     ; défini le nombre max de types par pokémon
