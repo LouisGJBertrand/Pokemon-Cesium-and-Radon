@@ -1,6 +1,6 @@
 class pokemon:
 
-    public constructeur ( int sexe, chaine nom, int niveau, tableau attaques, tableau types, int defense, int vitesse, int précision, int PV, int poids, int taille, int numerotPokeDex, boolean capture = 0, int pokeball = 0 ):
+    public constructeur ( int sexe, chaine nom, int niveau, tableau attaques, tableau types, int defense, int vitesse, int précision, int PV, int poids, int taille, int numerotPokeDex, boolean capture = 0, chaine capturePar = "none", int pokeball = 0 ):
         public pokemon -> sexe = sexe
         public pokemon -> nom = nom
         public pokemon -> niveau = niveau
@@ -16,16 +16,27 @@ class pokemon:
         public pokemon -> poids = poids
         public pokemon -> taille = taille
         public pokemon -> capture = capture
+        public pokemon -> capturePar = capturePar
         public pokemon -> pokeball = pokeball
     
     public ajouterAuCombat ( )
         table PokemonStats = [
-                                "precidion" : pokemon -> précision,
+                                "sexe" : pokemon -> sexe,
+                                "nom" : pokemon -> nom,
+                                "niveau" : pokemon -> niveau,
+                                "numerotPokeDex" : pokemon -> numerotPokeDex,
+                                "sprites" : pokemon -> sprites,
+                                "attaques" : pokemon -> attaques,
+                                "types" : pokemon -> types,
+                                "vitesse" : pokemon -> vitesse,
+                                "defense" : pokemon -> defense,
                                 "PV" : pokemon -> PV,
                                 "PVIG" : pokemon -> PVIG,
-                                "taille" : pokemon -> taille,
+                                "précision" : pokemon -> précision,
                                 "poids" : pokemon -> poids,
+                                "taille" : pokemon -> taille,
                                 "capture" : pokemon -> capture,
+                                "capturePar" : pokemon -> capturePar,
                                 "pokeball" : pokemon -> pokeball,
                             ]
 
