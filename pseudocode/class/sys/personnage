@@ -1,0 +1,25 @@
+class personnage:
+
+    public constructeur ( int sexe, chaine nom, int niveau, int sprite, booléan jouable = 1, int argent = 1000 ):
+        public personnage -> sexe = sexe                                                ; défini le sexe d'un personnage
+        public personnage -> nom = nom                                                  ; défini le nom du personnage pour les dialogues et l'inventaire
+        public personnage -> niveau = niveau                                            ; défini le niveau du personnage
+        public personnage -> jouable = jouable                                          ; permet au joueur de l'utiliser
+        public personnage -> argent = argent                                            ; défini l'argent du personnage
+        public personnage -> inventaire = nouvel inventaire                             ; déclare son inventaire
+
+    public ajouterObjet ( objet objetAjoute, int quantité = 1)
+        retourner personnage -> inventaire -> ajouterObjet ( objetAjoute, quantité )    ; appelle la fonction d'ajout d'objet de l'inventaire du
+                                                                                        ; personnge et retourne l'état de la transaction
+    
+    public retirerArgent ( int valeur )
+        si valeur < personnage -> argent
+            personnage -> argent = personnage -> argent - valeur
+            retourner vraie
+        sinon
+            retourner faux
+        fin si
+
+    public ajouterArgent ( int valeur )
+        personnage -> argent = personnage -> argent + valeur
+        retourner vraie

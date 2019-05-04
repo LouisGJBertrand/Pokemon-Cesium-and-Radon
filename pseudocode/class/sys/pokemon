@@ -1,0 +1,22 @@
+class pokemon:
+
+    public constructeur ( int sexe, chaine nom, int niveau, int sprite, tableau attaques, tableau type, int defense, int vitesse, int précision, int PV, int poids, int taille, boolean capture = 0, int pokeball = 0 ):
+        public pokemon -> sexe = sexe
+        public pokemon -> nom = nom
+        public pokemon -> niveau = niveau
+        public pokemon -> sprite = sprite
+        public pokemon -> attaques[MAXATK] = attaques
+        public pokemon -> type[MAXTPE] = type
+        public pokemon -> vitesse = vitesse
+        public pokemon -> defense = defense
+        public pokemon -> PV = PV
+        public pokemon -> précision = précision
+        public pokemon -> poids = poids
+        public pokemon -> taille = taille
+        public pokemon -> capture = capture
+        public pokemon -> pokeball = pokeball
+    
+    public subireAttaque ( int puissance, int type )
+        retourner degats
+
+    public calculDeCapture ( pokeball )

@@ -1,0 +1,9 @@
+classe jeu:
+
+    public constructeur( chaine nom, chaine version, tableau credits, int MAXATK = 4, int MAXTPE = 2)
+        public $jeu -> nom = nom
+        public $jeu -> version = version
+        public $jeu -> credits[] = credits
+
+        constante MAXATK = MAXATK
+        constante MAXTPE = MAXTPE

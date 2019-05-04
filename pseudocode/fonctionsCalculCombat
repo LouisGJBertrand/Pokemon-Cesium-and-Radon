@@ -1,0 +1,32 @@
+CalculResistanceTypes ( table typeAttaquant, table TypeDefenseur ):
+    tableDesTypes[18][18] = [ 
+                                ; acer  cmbt    drgn    eau     elec    fee     feu     glce    insc    nrml    plnt    posn    psy     roch    sol     spct    tnbr    vol
+                                [ 1/2,  2,      1/2,    1,      1,      1/2,    2,      1/2,    1/2,    1/2,    1/2,    0,      1/2,    1/2,    2,      1,      1,      1/2],       ;acer 
+                                [ 1,    1,      1,      1,      1,      2,      1,      1,      1/2,    1,      1,      1,      2,      1/2,    1,      1,      1/2,    2],         ;cmbt
+                                [ 1,    1,      2,      1/2,    1/2,    2,      1/2,    2,      1,      1,      1/2,    1,      1,      1,      1,      1,      1,      1],         ;drgn
+                                [ 1/2,  1/2,    1,      1/2,    2,      1,      1/2,    1/2,    1,      1,      2,      1,      1,      1,      1,      1,      1,      1],         ;eau
+                                [ 1/2,  1,      1,      1,      1/2,    1,      1,      1,      1,      1,      1,      1,      1,      1,      2,      1,      1,      1/2],       ;elec
+                                [ 2,    1/2,    0,      1,      1,      1,      1,      1,      1/2,    1,      1,      2,      1,      1,      1,      1,      1/2,    1],         ;fee
+                                [ 1/2,  1,      1,      2,      1,      1/2,    1/2,    1/2,    1/2,    1,      1/2,    1,      1,      2,      2,      1,      1,      1],         ;feu
+                                [ 2,    2,      1,      1,      1,      1,      2,      1/2,    1,      1,      1,      1,      1,      2,      1,      1,      1,      1],         ;glce
+                                [ 1,    1/2,    1,      1,      1,      1,      2,      1,      1,      1,      1/2,    1,      1,      2,      1/2,    1,      1,      2],         ;insc
+                                [ 1,    2,      1,      1,      1,      1,      1,      1,      1,      1,      1,      1,      1,      1,      1,      0,      1,      1],         ;nrml
+                                [ 1,    1,      1,      1/2,    1/2,    1,      2,      2,      2,      1,      1/2,    2,      1,      1,      1/2,    1,      1,      2],         ;plnt
+                                [ 1,    1/2,    1,      1,      1,      1/2,    1,      1,      1/2,    1,      1/2,    1/2,    2,      1,      2,      1,      1,      1],         ;posn
+                                [ 1,    1/2,    1,      1,      1,      1,      1,      1,      2,      1,      1,      1,      1/2,    1,      1,      2,      2,      1],         ;psy
+                                [ 2,    2,      1,      2,      1,      1,      1/2,    1,      1,      1/2,    2,      1/2,    1,      1,      2,      1,      1,      1/2],       ;roch
+                                [ 1,    1,      1,      2,      0,      1,      1,      2,      1,      1,      2,      1/2,    1,      1/2,    1,      1,      1,      1],         ;sol
+                                [ 1,    0,      1,      1       1,      1,      1,      1,      1/2,    0,      1,      1/2,    1,      1,      1,      2,      2,      1],         ;spct
+                                [ 1,    2,      1,      1,      1,      2,      1,      1,      2,      1,      1,      1,      0,      1,      1,      1/2,    1/2,    1],         ;tnbr
+                                [ 1,    1/2,    1,      1,      2,      1,      1,      2,      1/2,    1,      1/2,    1,      1,      2,      0,      1,      1,      1]          ;vol
+                            ]
+    
+    resistance = 1
+
+    pour i = 0, i < compter ( typeAttaquant ), i++:                                             ; pour chaque type dans l'attaque
+        pour j = 0, j < compter ( typeDefenseur ), j++:                                         ; pour chaque type du défenseur 
+            resistance = resistance * tableDesTypes[TypeDefenseur[j]][typeAttaquant[i]]         ; calcul de la résistance
+        fin pour
+    fin pour
+
+    retourner resistance        ; retourner la resistance

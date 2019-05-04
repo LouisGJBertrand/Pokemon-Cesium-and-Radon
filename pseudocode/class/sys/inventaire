@@ -1,0 +1,17 @@
+class inventaire:
+
+    public constructeur ( int taille, chaine nom )
+        public inventaire -> tailleMax = taille         ; taille maximum de l'inventaire
+        public inventaire -> tailleAct = 0              ; taille actuel de l'inventaire (0 de base car vide)
+        public inventaire -> nom = nom                  ; nom affiché à l'ouverture de l'inventaire
+        public inventaire -> objets[tailleMax] = []     ; table des objets
+
+    public ajouterObjet ( objet objetAjoute, int quantité = 1)
+        si tailleMax >= tailleAct + quantité:                   ; Test pour savoir si il y a de la place dans l'inventaire pour l'objet
+            pour i = 0, i < quantité, i++:                      ; pour la quantité d'objet à ajouter,
+                public inventaire -> objets[] = objetAjoute     ; on ajoute l'objet dans l'inventaire
+            fin pour
+            retourner vraie                                     ; retourner la valeur vraie pour indiquer une réussite
+        sinon
+            retourner faux                                      ; retourner la valeur vraie pour indiquer un echec
+        fin si
