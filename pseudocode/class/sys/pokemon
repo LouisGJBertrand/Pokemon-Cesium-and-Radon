@@ -1,6 +1,6 @@
 class pokemon:
 
-    public constructeur ( int sexe, chaine nom, int niveau, tableau attaques, tableau types, int defense, int vitesse, int précision, int PV, int poids, int taille, int numerotPokeDex, boolean capture = 0, chaine capturePar = "none", int pokeball = 0 ):
+    public constructeur ( int sexe, chaine nom, int niveau, tableau attaques, tableau types, int defense, int vitesse, int précision, int PV, int poids, int taille, int numerotPokeDex, boolean capture = 0, chaine capturePar = "none", int pokeball = 0, table status = [] ):
         public pokemon -> sexe = sexe
         public pokemon -> nom = nom
         public pokemon -> niveau = niveau
@@ -18,10 +18,11 @@ class pokemon:
         public pokemon -> capture = capture
         public pokemon -> capturePar = capturePar
         public pokemon -> pokeball = pokeball
+        public pokemon -> status = status
     
-    public ajouterAuCombat ( )
-        table PokemonStats = [
-                                "sexe" : pokemon -> sexe,
+    public ajouterAuCombat ( )                                                              ; cette fonction n'est pas très utile en sois
+        table PokemonStats = [                                                              ; mais elle permet un gain de temps et d'eviter
+                                "sexe" : pokemon -> sexe,                                   ; d'aller chercher les variables dans l'objet
                                 "nom" : pokemon -> nom,
                                 "niveau" : pokemon -> niveau,
                                 "numerotPokeDex" : pokemon -> numerotPokeDex,
@@ -38,9 +39,11 @@ class pokemon:
                                 "capture" : pokemon -> capture,
                                 "capturePar" : pokemon -> capturePar,
                                 "pokeball" : pokemon -> pokeball,
+                                "status" : pokemon -> status,
                             ]
+        retourner PokemonStats
 
-    public subireAttaque ( int niveauDeLAttaquant, int puissance, table typesDeLAttaque, int statAttaque )
+    public subireAttaque ( int niveauDeLAttaquant, int puissance, table typesDeLAttaque, int statAttaque, int status, int chanceStatus = 50 )
 
         Niv = niveauDeLAttaquant
         Att = statAttaque
@@ -50,6 +53,10 @@ class pokemon:
         CM = CalculResistanceTypes ( typesDeLAttaque, pokemon -> types )
 
         degats = ( ( ( (Niv * 0.4 + 2) * Att * Pui ) / ( Def * 50 ) ) + 2 ) * CM
+
+        chanceRandom = aleatoire ( 0, 100 )
+
+        si chanceRandom <= chanceStatus
 
         retourner degats
 
