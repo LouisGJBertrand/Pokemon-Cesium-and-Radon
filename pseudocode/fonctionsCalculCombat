@@ -33,4 +33,4 @@ CalculResistanceTypes ( table typeAttaquant, table TypeDefenseur ):
 
     ; Le calcul des résistances se font ainsi:
     ; resistance de base = 1
-    ; base * ( ( résistance du type par rapport à l'attaque ) pour chaques types déclarés )
+    ; base * ( ( résistance du type par rapport à l'attaque ) pour chaques types déclarés ) = CM
