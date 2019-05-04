@@ -1,0 +1,22 @@
+A FAIRE
+    classes:
+        espaces -> déclaration d'espaces de jeu ( maison, plaine, forêt ...)
+        évenements -> déclaration d'un évenement in-game
+        langues -> possibilité de traduction
+
+    à développer:
+        controles du joueur
+        dialogues
+        combats
+        menus et gui
+        echange de pokémons
+        multijoueur et echanges de pokémons
+        
+        Api web pour le marchés
+
+FAIT
+    classes:
+        inventaire -> declaration d'un inventaire
+        jeu -> declaration du jeu
+        pokemon -> declaration d'un pokemon
+        personnage -> declaration d'un personnage (jouable ou non)

@@ -1,0 +1,2 @@
+public demarrage ()
+    jeu = nouvel jeu ( nom, version, credits, MAXATK = 4, MAXTPE = 2, MAXTPEATK = 2)
