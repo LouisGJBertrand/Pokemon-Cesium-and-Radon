@@ -1,22 +1,45 @@
 class pokemon:
 
-    public constructeur ( int sexe, chaine nom, int niveau, int sprite, tableau attaques, tableau type, int defense, int vitesse, int précision, int PV, int poids, int taille, boolean capture = 0, int pokeball = 0 ):
+    public constructeur ( int sexe, chaine nom, int niveau, tableau attaques, tableau types, int defense, int vitesse, int précision, int PV, int poids, int taille, int numerotPokeDex, boolean capture = 0, int pokeball = 0 ):
         public pokemon -> sexe = sexe
         public pokemon -> nom = nom
         public pokemon -> niveau = niveau
-        public pokemon -> sprite = sprite
+        public pokemon -> numerotPokeDex = numerotPokeDex
+        public pokemon -> sprites = getSprites ( numerotPokeDex )
         public pokemon -> attaques[MAXATK] = attaques
-        public pokemon -> type[MAXTPE] = type
+        public pokemon -> types[MAXTPE] = types
         public pokemon -> vitesse = vitesse
         public pokemon -> defense = defense
         public pokemon -> PV = PV
+        public pokemon -> PVIG = PV
         public pokemon -> précision = précision
         public pokemon -> poids = poids
         public pokemon -> taille = taille
         public pokemon -> capture = capture
         public pokemon -> pokeball = pokeball
     
-    public subireAttaque ( int puissance, int type )
+    public ajouterAuCombat ( )
+        table PokemonStats = [
+                                "precidion" : pokemon -> précision,
+                                "PV" : pokemon -> PV,
+                                "PVIG" : pokemon -> PVIG,
+                                "taille" : pokemon -> taille,
+                                "poids" : pokemon -> poids,
+                                "capture" : pokemon -> capture,
+                                "pokeball" : pokemon -> pokeball,
+                            ]
+
+    public subireAttaque ( int niveauDeLAttaquant, int puissance, table typesDeLAttaque, int statAttaque )
+
+        Niv = niveauDeLAttaquant
+        Att = statAttaque
+        Pui = puissance
+        Def = pokemon -> defense
+
+        CM = CalculResistanceTypes ( typesDeLAttaque, pokemon -> types )
+
+        degats = ( ( ( (Niv * 0.4 + 2) * Att * Pui ) / ( Def * 50 ) ) + 2 ) * CM
+
         retourner degats
 
     public calculDeCapture ( pokeball )

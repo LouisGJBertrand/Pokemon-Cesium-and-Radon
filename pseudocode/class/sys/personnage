@@ -13,13 +13,13 @@ class personnage:
                                                                                         ; personnge et retourne l'état de la transaction
     
     public retirerArgent ( int valeur )
-        si valeur < personnage -> argent
-            personnage -> argent = personnage -> argent - valeur
-            retourner vraie
+        si valeur < personnage -> argent                                                ; test si la transaction est fesable
+            personnage -> argent = personnage -> argent - valeur                        ; si oui:   effectue la transaction
+            retourner vraie                                                             ;           retourne le succes
         sinon
-            retourner faux
+            retourner faux                                                              ; si non:   retourne l'echec de la transaction
         fin si
 
     public ajouterArgent ( int valeur )
-        personnage -> argent = personnage -> argent + valeur
-        retourner vraie
+        personnage -> argent = personnage -> argent + valeur                            ; ajoute la valeur à ajouter à la bourse du personnage
+        retourner vraie                                                                 ; retourne le succes
