@@ -19,6 +19,7 @@ class pokemon:
         public pokemon -> capturePar = capturePar
         public pokemon -> pokeball = pokeball
         public pokemon -> status = status
+        public pokemon -> inventaire = nouvel inventaire ( 1, nom )
     
     public ajouterAuCombat ( )                                                              ; cette fonction n'est pas très utile en sois
         table PokemonStats = [                                                              ; mais elle permet un gain de temps et d'eviter
@@ -40,6 +41,7 @@ class pokemon:
                                 "capturePar" : pokemon -> capturePar,
                                 "pokeball" : pokemon -> pokeball,
                                 "status" : pokemon -> status,
+                                "inventaire" : pokemon -> inventaire,
                             ]
         retourner PokemonStats
 

@@ -6,7 +6,7 @@ class personnage:
         public personnage -> niveau = niveau                                            ; défini le niveau du personnage
         public personnage -> jouable = jouable                                          ; permet au joueur de l'utiliser
         public personnage -> argent = argent                                            ; défini l'argent du personnage
-        public personnage -> inventaire = nouvel inventaire                             ; déclare son inventaire
+        public personnage -> inventaire = nouvel inventaire ( 24, nom )                 ; déclare son inventaire
 
     public ajouterObjet ( objet objetAjoute, int quantité = 1)
         retourner personnage -> inventaire -> ajouterObjet ( objetAjoute, quantité )    ; appelle la fonction d'ajout d'objet de l'inventaire du
