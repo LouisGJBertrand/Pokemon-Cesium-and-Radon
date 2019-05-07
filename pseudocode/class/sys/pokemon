@@ -1,11 +1,10 @@
 class pokemon:
 
-    public constructeur ( int sexe, chaine nom, int niveau, tableau attaques, tableau types, int defense, int vitesse, int précision, int PV, int poids, int taille, int numerotPokeDex, boolean capture = 0, chaine capturePar = "none", int pokeball = 0, table status = [] ):
+    public constructeur ( int sexe, chaine nom, int niveau, tableau attaques[MAXATK], tableau types, int defense, int vitesse, int précision, int PV, int poids, int taille, int numerotPokeDex, boolean capture = 0, chaine capturePar = "none", int pokeball = 0, table status status = [], booléan chromatique ):
         public pokemon -> sexe = sexe
         public pokemon -> nom = nom
         public pokemon -> niveau = niveau
         public pokemon -> numerotPokeDex = numerotPokeDex
-        public pokemon -> sprites = getSprites ( numerotPokeDex )
         public pokemon -> attaques[MAXATK] = attaques
         public pokemon -> types[MAXTPE] = types
         public pokemon -> vitesse = vitesse
@@ -18,8 +17,9 @@ class pokemon:
         public pokemon -> capture = capture
         public pokemon -> capturePar = capturePar
         public pokemon -> pokeball = pokeball
-        public pokemon -> status = status
+        public pokemon -> status[] = status
         public pokemon -> inventaire = nouvel inventaire ( 1, nom )
+        public pokemon -> chromatique = chromatique
     
     public ajouterAuCombat ( )                                                              ; cette fonction n'est pas très utile en sois
         table PokemonStats = [                                                              ; mais elle permet un gain de temps et d'eviter
@@ -27,7 +27,6 @@ class pokemon:
                                 "nom" : pokemon -> nom,
                                 "niveau" : pokemon -> niveau,
                                 "numerotPokeDex" : pokemon -> numerotPokeDex,
-                                "sprites" : pokemon -> sprites,
                                 "attaques" : pokemon -> attaques,
                                 "types" : pokemon -> types,
                                 "vitesse" : pokemon -> vitesse,
@@ -42,10 +41,11 @@ class pokemon:
                                 "pokeball" : pokemon -> pokeball,
                                 "status" : pokemon -> status,
                                 "inventaire" : pokemon -> inventaire,
+                                "chromatique" : pokemon -> chromatique,
                             ]
         retourner PokemonStats
 
-    public subireAttaque ( int niveauDeLAttaquant, int puissance, table typesDeLAttaque, int statAttaque, int status, int chanceStatus = 50 )
+    public subireAttaque ( int niveauDeLAttaquant, int puissance, table typesDeLAttaque, int statAttaque, status status, int chanceStatus = 0 )
 
         Niv = niveauDeLAttaquant
         Att = statAttaque
@@ -58,7 +58,8 @@ class pokemon:
 
         chanceRandom = aleatoire ( 0, 100 )
 
-        si chanceRandom <= chanceStatus
+        si chanceRandom <= chanceStatus:
+
 
         retourner degats
 

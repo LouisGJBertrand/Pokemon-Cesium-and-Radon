@@ -3,6 +3,8 @@ A FAIRE
         espaces -> déclaration d'espaces de jeu ( maison, plaine, forêt ...)
         évenements -> déclaration d'un évenement in-game
         langues -> possibilité de traduction
+        inventaire -> retirer un objet de l'inventaire
+        inventaire -> trier l'inventaire
 
     à développer:
         controles du joueur
@@ -11,12 +13,13 @@ A FAIRE
         menus et gui
         echange de pokémons
         multijoueur et echanges de pokémons
-        
         Api web pour le marchés
 
 FAIT
     classes:
         inventaire -> declaration d'un inventaire
+        inventaire -> ajout d'un objet dans inventaire
         jeu -> declaration du jeu
         pokemon -> declaration d'un pokemon
+        pokemon -> subir une attaque
         personnage -> declaration d'un personnage (jouable ou non)

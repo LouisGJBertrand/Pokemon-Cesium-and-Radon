@@ -13,19 +13,19 @@ class inventaire:
                 inventaire -> tailleAct++
             fin pour
 
-            trier inventaire -> objets par ordre alpha
+            trier inventaire -> objets par ordre alpha du nom des objets avec une fonction custom
 
             retourner vraie                                                     ; retourner la valeur vraie pour indiquer une réussite
         sinon
             retourner faux                                                      ; retourner la valeur vraie pour indiquer un echec
         fin si
 
-    public compterObjet ( objet objetACompter, int* cases )
-        nombreDeCetObjet = 0
+    public compterObjet ( objet objetACompter )
+        nombreDeCetObjet = 0                                                    ; nombre de l'objet demandé dans l'inventaire  
 
-        pour i = 0, i < inventaire -> tailleAct, i++:
-            si objetACompter == inventaire -> objets[i]:
-                nombreDeCetObjet++
+        pour i = 0, i < inventaire -> tailleAct, i++:                           ; pour chaque objet dans l'inventaire
+            si objetACompter == inventaire -> objets[i]:                        ; si l'objet testé correspond
+                nombreDeCetObjet++                                              ; on ajoute 1 au nombre de l'objet demandé dans l'inventaire
                 on ajoute i à la table pointeur cases
             fin si
         fin pour

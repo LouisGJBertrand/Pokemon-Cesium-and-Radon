@@ -1,0 +1,16 @@
+classe status:
+
+    public constructeur ( int type, int dureeEnTours ):
+        public status -> type = type
+        public status -> dureeEnTours = dureeEnTours
+        public status -> tourActuel = tourActuel
+
+    public ajouterTour( int nb = 1 ):
+        si status -> dureeEnTours >= status -> tourActuel:
+            status -> tourActuel++
+        sinon
+            détruire le status
+        fin si
+
+    public destructeur ( )
+        désinstancier la classe
