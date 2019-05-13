@@ -1,0 +1,40 @@
+interface pokemon:
+    public sexe = sexe
+    public nom = nom
+    public niveau = niveau
+    public numerotPokeDex = numerotPokeDex
+    public attaques[MAXATK] = attaques
+    public types[MAXTPE] = types
+    public vitesse = vitesse
+    public defense = defense
+    public PV = PV
+    public PVIG = PV
+    public précision = précision
+    public poids = poids
+    public taille = taille
+    public capture = capture
+    public capturePar = capturePar
+    public pokeball = pokeball
+    public status[] = status
+    public inventaire = nouvel inventaire ( 1, nom )
+    public chromatique = chromatique
+    public tauxdecapt = tauxdecapt
+
+    public constructeur ( int sexe, chaine nom, int niveau, tableau attaques[MAXATK], tableau types, int defense, int vitesse, int précision, int PV, int poids, int taille, int numerotPokeDex, boolean capture = 0, int tauxdecapt = 25, chaine capturePar = "none", int pokeball = 0, table status status = [], booléan chromatique )
+
+
+    public subireAttaque ( int niveauDeLAttaquant, int puissance, table typesDeLAttaque, int statAttaque, status status, int chanceStatus = 0 )
+
+    ;
+    ; valeurs de retour de calculDeCapture:
+    ;
+    ;   -1  = le pokémon est déjà capturé par quelqu'un
+    ;   0   = échec critique de la capture
+    ;   1   = échec de la capture + remue une fois
+    ;   2   = échec de la capture + remue 2 fois
+    ;   3   = échec de la capture + remue 3 fois
+    ;   4   = réussite
+    ;   5   = si implémentation : réussite critique
+    ;
+
+    public calculDeCapture ( objet.pokeball pokeball, bstat )

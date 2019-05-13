@@ -1,0 +1,11 @@
+interfacee status:
+
+    public type = type
+    public dureeEnTours = dureeEnTours
+    public tourActuel = tourActuel
+
+    public constructeur ( int type, int dureeEnTours )
+
+    public ajouterTour( int nb = 1 )
+
+    public destructeur ( )

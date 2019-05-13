@@ -1,0 +1,16 @@
+interface personnage:
+
+    public sexe = sexe                                                ; défini le sexe d'un personnage
+    public nom = nom                                                  ; défini le nom du personnage pour les dialogues et l'inventaire
+    public niveau = niveau                                            ; défini le niveau du personnage
+    public jouable = jouable                                          ; permet au joueur de l'utiliser
+    public argent = argent                                            ; défini l'argent du personnage
+    public inventaire = nouvel inventaire ( 24, nom )                 ; déclare son inventaire
+
+    public constructeur ( int sexe, chaine nom, int niveau, int sprite, booléan jouable = 1, int argent = 1000 )
+
+    public ajouterObjet ( objet objetAjoute, int quantité = 1)
+    
+    public retirerArgent ( int valeur )
+
+    public ajouterArgent ( int valeur )

@@ -1,0 +1,8 @@
+interface objet:
+
+    public nom = nom
+    public poids = 1
+    public otype = type
+    public sprite = sprite
+
+    public constructeur ( chaine nom, int type, int sprite ):

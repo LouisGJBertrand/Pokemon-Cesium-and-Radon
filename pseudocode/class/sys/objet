@@ -1,7 +1,0 @@
-class objet:
-
-    public constructeur ( chaine nom, int type, int sprite):
-        public objet -> nom = nom
-        public objet -> poids = poids
-        public objet -> type = type
-        public objet -> sprite = sprite

@@ -3,8 +3,9 @@ A FAIRE
         espaces -> déclaration d'espaces de jeu ( maison, plaine, forêt ...)
         évenements -> déclaration d'un évenement in-game
         langues -> possibilité de traduction
-        inventaire -> retirer un objet de l'inventaire
         inventaire -> trier l'inventaire
+        objets -> faire toutes les classes d'objets customs:
+
 
     à développer:
         controles du joueur
@@ -22,4 +23,9 @@ FAIT
         jeu -> declaration du jeu
         pokemon -> declaration d'un pokemon
         pokemon -> subir une attaque
+        pokemon -> capture
         personnage -> declaration d'un personnage (jouable ou non)
+        inventaire -> retirer un objet de l'inventaire
+
+    global:
+        interfaces des classes déjà mises en places

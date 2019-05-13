@@ -1,4 +1,4 @@
-classe jeu:
+classe jeu inteface jeu:
 
     public constructeur( chaine nom, chaine version, tableau credits, int MAXATK = 4, int MAXTPE = 2, int MAXTPEATK = 2)
         public $jeu -> nom = nom                                            ; Défini le nom du jeu

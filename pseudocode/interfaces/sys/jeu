@@ -1,0 +1,11 @@
+interface jeu:
+
+    public nom = nom                                            ; Défini le nom du jeu
+    public version = version                                    ; défini la version du jeu
+    public credits[] = credits                                  ; défini les crédits du jeux
+
+    constante MAXATK = MAXATK                                           ; défini le nombre max d'attaque par pokémon
+    constante MAXTPE = MAXTPE                                           ; défini le nombre max de types par pokémon
+    constante MAXTPEATK = MAXTPEATK                                     ; défini le nombre max de types par pokémon
+
+    public constructeur( chaine nom, chaine version, tableau credits, int MAXATK = 4, int MAXTPE = 2, int MAXTPEATK = 2)

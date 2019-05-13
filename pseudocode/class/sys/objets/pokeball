@@ -1,4 +1,4 @@
-class pokeball étend de objet:
+class pokeball avec l'interface de objet:
 
     public constructeur ( chaine nom, int type, int sprite, int bball, int pkmtype = 0):
         public pokeball -> nom = nom

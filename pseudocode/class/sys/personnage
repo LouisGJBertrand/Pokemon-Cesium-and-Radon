@@ -1,4 +1,4 @@
-class personnage:
+class personnage inteface:
 
     public constructeur ( int sexe, chaine nom, int niveau, int sprite, booléan jouable = 1, int argent = 1000 ):
         public personnage -> sexe = sexe                                                ; défini le sexe d'un personnage

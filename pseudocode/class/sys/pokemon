@@ -1,4 +1,4 @@
-class pokemon:
+class pokemon inteface:
 
     public constructeur ( int sexe, chaine nom, int niveau, tableau attaques[MAXATK], tableau types, int defense, int vitesse, int précision, int PV, int poids, int taille, int numerotPokeDex, boolean capture = 0, int tauxdecapt = 25, chaine capturePar = "none", int pokeball = 0, table status status = [], booléan chromatique ):
         public pokemon -> sexe = sexe

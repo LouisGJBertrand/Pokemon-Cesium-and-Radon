@@ -1,0 +1,14 @@
+interface inventaire:
+
+    public tailleMax = taille                 ; taille maximum de l'inventaire
+    public tailleAct = 0                      ; taille actuel de l'inventaire (0 de base car vide)
+    public nom = nom                          ; nom affiché à l'ouverture de l'inventaire
+    public objets[tailleMax] = []             ; table des objets
+
+    public constructeur ( int taille, chaine nom, table objets = )
+
+    public ajouterObjet ( objet objetAjoute, int quantité = 1 )
+
+    public retirerUnObjet ( objet objetARetirer, int quantité = 1 )
+
+    public compterObjet ( objet objetACompter )
