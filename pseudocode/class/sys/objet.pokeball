@@ -1,0 +1,9 @@
+class pokeball étend de objet:
+
+    public constructeur ( chaine nom, int type, int sprite, int bball, int pkmtype = 0):
+        public pokeball -> nom = nom
+        public pokeball -> poids = 1
+        public pokeball -> type = type
+        public pokeball -> sprite = sprite
+        public pokeball -> bball = bball
+        public pokeball -> pkmtype = pkmtype

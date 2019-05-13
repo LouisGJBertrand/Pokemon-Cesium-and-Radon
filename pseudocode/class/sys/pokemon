@@ -1,6 +1,6 @@
 class pokemon:
 
-    public constructeur ( int sexe, chaine nom, int niveau, tableau attaques[MAXATK], tableau types, int defense, int vitesse, int précision, int PV, int poids, int taille, int numerotPokeDex, boolean capture = 0, chaine capturePar = "none", int pokeball = 0, table status status = [], booléan chromatique ):
+    public constructeur ( int sexe, chaine nom, int niveau, tableau attaques[MAXATK], tableau types, int defense, int vitesse, int précision, int PV, int poids, int taille, int numerotPokeDex, boolean capture = 0, int tauxdecapt = 25, chaine capturePar = "none", int pokeball = 0, table status status = [], booléan chromatique ):
         public pokemon -> sexe = sexe
         public pokemon -> nom = nom
         public pokemon -> niveau = niveau
@@ -20,30 +20,7 @@ class pokemon:
         public pokemon -> status[] = status
         public pokemon -> inventaire = nouvel inventaire ( 1, nom )
         public pokemon -> chromatique = chromatique
-    
-    public ajouterAuCombat ( )                                                              ; cette fonction n'est pas très utile en sois
-        table PokemonStats = [                                                              ; mais elle permet un gain de temps et d'eviter
-                                "sexe" : pokemon -> sexe,                                   ; d'aller chercher les variables dans l'objet
-                                "nom" : pokemon -> nom,
-                                "niveau" : pokemon -> niveau,
-                                "numerotPokeDex" : pokemon -> numerotPokeDex,
-                                "attaques" : pokemon -> attaques,
-                                "types" : pokemon -> types,
-                                "vitesse" : pokemon -> vitesse,
-                                "defense" : pokemon -> defense,
-                                "PV" : pokemon -> PV,
-                                "PVIG" : pokemon -> PVIG,
-                                "précision" : pokemon -> précision,
-                                "poids" : pokemon -> poids,
-                                "taille" : pokemon -> taille,
-                                "capture" : pokemon -> capture,
-                                "capturePar" : pokemon -> capturePar,
-                                "pokeball" : pokemon -> pokeball,
-                                "status" : pokemon -> status,
-                                "inventaire" : pokemon -> inventaire,
-                                "chromatique" : pokemon -> chromatique,
-                            ]
-        retourner PokemonStats
+        public pokemon -> tauxdecapt = tauxdecapt
 
     public subireAttaque ( int niveauDeLAttaquant, int puissance, table typesDeLAttaque, int statAttaque, status status, int chanceStatus = 0 )
 
@@ -63,4 +40,65 @@ class pokemon:
 
         retourner degats
 
-    public calculDeCapture ( pokeball )
+    ;
+    ; valeurs de retour de calculDeCapture:
+    ;
+    ;   -1  = le pokémon est déjà capturé par quelqu'un
+    ;   0   = échec critique de la capture
+    ;   1   = échec de la capture + remue une fois
+    ;   2   = échec de la capture + remue 2 fois
+    ;   3   = échec de la capture + remue 3 fois
+    ;   4   = réussite
+    ;   5   = si implémentation : réussite critique
+    ;
+
+    public calculDeCapture ( objet.pokeball pokeball, bstat )
+
+        si pokemon -> capture:
+            retourner -1
+        fin si
+
+        entier Pvmax = pokemon -> PV
+        entier Pvact = pokemon -> PVIG
+        entier t = pokemon -> tauxdecapt
+        entier bball = pokeball -> bball
+        entier bstatut = 1                                                                                             ; valeur à adapter selon les status du pokemon
+
+        si pokemon -> status[] contient le status gelé ou endormi:
+            bstat = 2
+        sinon si pokemon -> status[] contient le status paralysé, empoisonné ou brûlé:
+            bstat = 1.5
+        fin si
+
+        entier a = ( 1 - 2/3 * ( Pvact / Pvmax ) ) * t * bball * bstatut                                              ; a est le nom donné à la formule sur https://www.pokepedia.fr/Capture_des_Pok%C3%A9mon,
+
+        si a >= 255:
+            retourner 4
+        sinon
+
+            entier b = ( 2^16 - 1 ) * ( ( a / ( 2^8 - 1 ) ) ^ ( 1/4 ) ) = 65535 - ( ( a / 255 ) ^ 1/4 )
+
+            x0 = nombre aléatoire entre 1 et 65535 compris
+            x1 = nombre aléatoire entre 1 et 65535 compris
+            x2 = nombre aléatoire entre 1 et 65535 compris
+            x3 = nombre aléatoire entre 1 et 65535 compris
+
+            si x0 <= b et x1 <= b et x2 <= b et x3 <= b:
+                retourner 4
+            sinon
+                sortie = 0
+                si x0 <= b:
+                    sortie++
+                fin si
+                si x1 <= b:
+                    sortie++
+                fin si
+                si x2 <= b:
+                    sortie++
+                fin si
+                si x3 <= b:
+                    sortie++
+                fin si
+                retourner sortie
+            fin si
+        fin si
