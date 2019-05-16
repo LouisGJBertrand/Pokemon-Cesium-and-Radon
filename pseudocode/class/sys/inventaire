@@ -21,20 +21,6 @@ class inventaire interface inventaire:
 
         retourner faux                                                          ; retourner la valeur vraie pour indiquer un echec
 
-    public retirerUnObjet ( objet objetARetirer, int quantité = 1 )
-        table compteInv = inventaire -> compterObjet ( objetARetirer ) [ 0 ]
-        si compteInv [ 0 ] est > à 0 et > à quantité:
-            pour i = compteInv [ 1 ], i < compteInv [ 1 ] + quantité, i++:
-                supprimer de l'inventaire l'objet à la clef i
-            fin pour
-
-            trier inventaire -> objets par ordre alpha du nom des objets avec une fonction custom
-            retourner vraie
-
-        fin si
-
-        retourner faux
-
     public compterObjet ( objet objetACompter )
         nombreDeCetObjet = 0                                                    ; nombre de l'objet demandé dans l'inventaire  
 
@@ -48,3 +34,17 @@ class inventaire interface inventaire:
         fin pour
 
         sortie [ 0 ] = nombreDeCetObjet
+
+    public retirerUnObjet ( objet objetARetirer, int quantité = 1 )
+        table compteInv = inventaire -> compterObjet ( objetARetirer ) [ 0 ]
+        si compteInv [ 0 ] est > à 0 et > à quantité:
+            pour i = compteInv [ 1 ], i < compteInv [ 1 ] + quantité, i++:
+                supprimer de l'inventaire l'objet à la clef i
+            fin pour
+
+            trier inventaire -> objets par ordre alpha du nom des objets avec une fonction custom
+            retourner vraie
+
+        fin si
+
+        retourner faux

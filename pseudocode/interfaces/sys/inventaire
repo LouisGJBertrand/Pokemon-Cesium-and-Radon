@@ -9,6 +9,6 @@ interface inventaire:
 
     public ajouterObjet ( objet objetAjoute, int quantité = 1 )
 
-    public retirerUnObjet ( objet objetARetirer, int quantité = 1 )
-
     public compterObjet ( objet objetACompter )
+
+    public retirerUnObjet ( objet objetARetirer, int quantité = 1 )
