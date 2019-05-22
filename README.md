@@ -5,9 +5,9 @@ Un projet open-Source de pokémon développé en unreal C++ sur unreal engine 4
 
 # Etat du projet
 
-CONCEPTION PRELIMINAIRE - en cours
-CONCEPTION DETAILLEE
-MISE EN LIGNE DE VERSIONS JOUABLES
-AMELIORATIONS
+CONCEPTION PRELIMINAIRE - en cours<br>
+CONCEPTION DETAILLEE<br>
+MISE EN LIGNE DE VERSIONS JOUABLES<br>
+AMELIORATIONS<br>
 
 se référer aux todos
